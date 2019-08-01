@@ -9,13 +9,6 @@ module.exports = function(deployer, networkName, accounts) {
   if (tdr.isDryRunNetworkName(networkName)) { return }
   deployer.then(async () => {
     const poolManager = await RealPoolManager.deployed()
-    const poolAddress = await poolManager.currentPool()
-    const pool = await RealPool.at(poolAddress)
-    const token = await TokenMock.deployed()
-
-    const ticketPrice = web3.utils.toWei('20', 'ether')
-    await token.approve(poolAddress, ticketPrice)
-    await pool.buyTickets(1)
-    
+    await poolManager.createPool()
   })
 };

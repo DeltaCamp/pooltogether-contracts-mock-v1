@@ -11,11 +11,9 @@ module.exports = function(deployer, networkName, accounts) {
     const poolManager = await RealPoolManager.deployed()
     const poolAddress = await poolManager.currentPool()
     const pool = await RealPool.at(poolAddress)
-    const token = await TokenMock.deployed()
-
-    const ticketPrice = web3.utils.toWei('20', 'ether')
-    await token.approve(poolAddress, ticketPrice)
-    await pool.buyTickets(1)
     
+    let secret = '0x1234123412341234123412341234123412341234123412341234123412341234'
+
+    await pool.complete(secret)
   })
 };

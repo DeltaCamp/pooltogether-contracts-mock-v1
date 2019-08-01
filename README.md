@@ -53,6 +53,12 @@ If things aren't working properly (getting random errors?) then try:
 $ rm networks/1234.json && rm -rf build && rm zos.dev-1234.json && zos push && yarn migrate
 ```
 
+To view a list of all of the Pool contract addresses:
+
+```
+yarn show
+```
+
 
 # Deploying to Rinkeby
 

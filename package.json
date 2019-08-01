@@ -17,7 +17,8 @@
     "push-and-update": "yarn push && yarn update-all && yarn zos-truffle-merge",
     "console": "truffle console --network local",
     "version": "truffle version",
-    "zos-truffle-merge": "zos-truffle-merge -n 1234 zos.dev-1234.json"
+    "zos-truffle-merge": "zos-truffle-merge -n 1234 zos.dev-1234.json",
+    "show": "truffle --network local exec scripts/show-pools.js"
   },
   "dependencies": {
     "chalk": "^2.4.2",

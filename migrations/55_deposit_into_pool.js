@@ -13,9 +13,9 @@ module.exports = function(deployer, networkName, accounts) {
     const pool = await RealPool.at(poolAddress)
     const token = await TokenMock.deployed()
 
-    const ticketPrice = web3.utils.toWei('20', 'ether')
-    await token.approve(poolAddress, ticketPrice)
-    await pool.buyTickets(1)
+    const bigNumber = web3.utils.toWei('1000', 'ether')
+    await token.approve(poolAddress, bigNumber)
+    await pool.buyTickets(14)
     
   })
 };
